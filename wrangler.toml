@@ -1,0 +1,22 @@
+name = "email-summarizer"
+main = "src/worker.ts"
+compatibility_date = "2023-10-17"
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "email-summarizer"
+database_id = "76ed16ed-d9c6-4dd7-8bdf-8f9cf76c0883"
+
+[[queues.producers]]
+binding = "QUEUE"
+queue = "email-summarizer-queue"
+
+[[queues.consumers]]
+queue = "email-summarizer-queue"
+
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "email-summarizer"
